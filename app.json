@@ -2,14 +2,20 @@
   "expo": {
     "name": "eyetracking-mobile",
     "slug": "eyetracking-mobile",
+    "scheme": "eyetracking-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "newArchEnabled": true,
     "ios": {
       "supportsTablet": true
     },
     "android": {
+      "package": "com.eyetracking.mobile",
+      "permissions": [
+        "CAMERA"
+      ],
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/android-icon-foreground.png",
@@ -19,7 +25,28 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-sharing",
+      "expo-image",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Precisamos acessar suas fotos para você escolher a imagem que será exibida na sessão."
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Precisamos acessar suas fotos para salvar o mapa de calor gerado.",
+          "savePhotosPermission": "Precisamos salvar o mapa de calor gerado na sua galeria.",
+          "isAccessMediaLocationEnabled": false
+        }
+      ],
+      "expo-asset"
+    ]
   }
 }

@@ -1,0 +1,20 @@
+{
+  "name": "vision-camera-face-landmarker",
+  "version": "0.1.0",
+  "description": "Local react-native-vision-camera frame-processor plugin: wraps MediaPipe FaceLandmarker (iris landmarks) for the eyetracking-mobile app. Android only.",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "react-native": "src/index.ts",
+  "source": "src/index.ts",
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*",
+    "react-native-nitro-modules": "*",
+    "react-native-vision-camera": "*"
+  },
+  "devDependencies": {
+    "nitrogen": "*",
+    "react-native-nitro-modules": "*"
+  },
+  "private": true
+}
