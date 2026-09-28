@@ -1,0 +1,1 @@
+/home/yuri/eyetracking-mobile/node_modules/vision-camera-face-landmarker/android/build/intermediates/cxx/Debug/6t712u51/obj/arm64-v8a

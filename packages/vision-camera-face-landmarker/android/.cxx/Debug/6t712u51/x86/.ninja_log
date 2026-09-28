@@ -1,0 +1,6 @@
+# ninja log v5
+0	746	1790609269058064521	CMakeFiles/FaceLandmarker.dir/src/main/cpp/cpp-adapter.cpp.o	a2ad78a185abfc0b
+1	1654	1790609269958082460	CMakeFiles/FaceLandmarker.dir/home/yuri/eyetracking-mobile/node_modules/vision-camera-face-landmarker/nitrogen/generated/shared/c++/HybridFaceLandmarkerPluginSpec.cpp.o	185e362434cafcea
+1	1700	1790609270003083357	CMakeFiles/FaceLandmarker.dir/home/yuri/eyetracking-mobile/node_modules/vision-camera-face-landmarker/nitrogen/generated/android/FaceLandmarkerOnLoad.cpp.o	52b80a61fc256b02
+1	1803	1790609270108085449	CMakeFiles/FaceLandmarker.dir/home/yuri/eyetracking-mobile/node_modules/vision-camera-face-landmarker/nitrogen/generated/android/c++/JHybridFaceLandmarkerPluginSpec.cpp.o	9d40e39d52e2fe88
+1803	1831	1790609270150086286	../../../../build/intermediates/cxx/Debug/6t712u51/obj/x86/libFaceLandmarker.so	5bb7256d6722a754

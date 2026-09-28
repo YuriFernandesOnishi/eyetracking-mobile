@@ -1,0 +1,10 @@
+{
+  "enabled": true,
+  "prefabPath": "/home/yuri/.gradle/caches/modules-2/files-2.1/com.google.prefab/cli/2.1.0/aa32fec809c44fa531f01dcfb739b5b3304d3050/cli-2.1.0-all.jar",
+  "packages": [
+    "/home/yuri/.gradle/caches/9.3.1/transforms/63665759bc44fa5b83dd6b6c18b77145/transformed/react-android-0.86.3-debug/prefab",
+    "/home/yuri/eyetracking-mobile/node_modules/react-native-nitro-modules/android/build/intermediates/prefab_package/debug/prefab",
+    "/home/yuri/eyetracking-mobile/node_modules/react-native-vision-camera/android/build/intermediates/prefab_package/debug/prefab",
+    "/home/yuri/.gradle/caches/9.3.1/transforms/dd29849c799951ad0680f4b910344724/transformed/fbjni-0.7.0/prefab"
+  ]
+}

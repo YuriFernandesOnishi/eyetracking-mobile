@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef } from 'react';
 import type { Frame } from 'react-native-vision-camera';
 import { useCamera, useCameraDevice, useCameraPermission, useFrameOutput } from 'react-native-vision-camera';
 import { runOnJS } from 'react-native-worklets';
@@ -29,6 +29,13 @@ export function HiddenCameraCapture({ enabled, onFeatures, onPermissionDenied }:
   const { hasPermission, requestPermission, canRequestPermission } = useCameraPermission();
   const device = useCameraDevice('front');
   const throttleCounterRef = useRef(0);
+  // Create the HybridObject once on the main JS thread -- calling the
+  // factory (NitroModules.createHybridObject, inside
+  // getFaceLandmarkerPlugin) from within the worklet itself throws
+  // "[Worklets] Tried to synchronously call a Remote Function" (confirmed
+  // on-device). Only the resulting instance's own methods (plugin.detect)
+  // are safe to call synchronously from the frame-processor thread.
+  const plugin = useMemo(() => getFaceLandmarkerPlugin(), []);
 
   useEffect(() => {
     if (!enabled || hasPermission) return;
@@ -56,15 +63,18 @@ export function HiddenCameraCapture({ enabled, onFeatures, onPermissionDenied }:
         frame.dispose();
         return;
       }
-      const plugin = getFaceLandmarkerPlugin();
       const raw = plugin.detect(frame);
       frame.dispose();
       runOnJS(handleRawVector)(raw);
     },
-    [handleRawVector]
+    [handleRawVector, plugin]
   );
 
-  const frameOutput = useFrameOutput({ pixelFormat: 'native', onFrame });
+  // 'native' (PRIVATE/GPU format) isn't supported for ImageAnalysis on
+  // some devices (confirmed failing on a Galaxy J7 Prime 2 / Android 9)
+  // -- 'yuv' (YUV_420_888) is universally supported and is what
+  // GazeLandmarkerCore.detect() expects via MediaImageBuilder anyway.
+  const frameOutput = useFrameOutput({ pixelFormat: 'yuv', onFrame });
 
   useCamera({
     isActive: enabled && hasPermission && device != null,

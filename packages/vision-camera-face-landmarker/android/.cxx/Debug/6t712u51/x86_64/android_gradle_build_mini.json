@@ -1,0 +1,39 @@
+{
+  "buildFiles": [
+    "/home/yuri/eyetracking-mobile/node_modules/vision-camera-face-landmarker/android/.cxx/Debug/6t712u51/prefab/x86_64/prefab/lib/x86_64-linux-android/cmake/ReactAndroid/ReactAndroidConfig.cmake",
+    "/home/yuri/eyetracking-mobile/node_modules/vision-camera-face-landmarker/android/.cxx/Debug/6t712u51/prefab/x86_64/prefab/lib/x86_64-linux-android/cmake/ReactAndroid/ReactAndroidConfigVersion.cmake",
+    "/home/yuri/eyetracking-mobile/node_modules/vision-camera-face-landmarker/android/.cxx/Debug/6t712u51/prefab/x86_64/prefab/lib/x86_64-linux-android/cmake/fbjni/fbjniConfig.cmake",
+    "/home/yuri/eyetracking-mobile/node_modules/vision-camera-face-landmarker/android/.cxx/Debug/6t712u51/prefab/x86_64/prefab/lib/x86_64-linux-android/cmake/fbjni/fbjniConfigVersion.cmake",
+    "/home/yuri/eyetracking-mobile/node_modules/vision-camera-face-landmarker/android/.cxx/Debug/6t712u51/prefab/x86_64/prefab/lib/x86_64-linux-android/cmake/react-native-nitro-modules/react-native-nitro-modulesConfig.cmake",
+    "/home/yuri/eyetracking-mobile/node_modules/vision-camera-face-landmarker/android/.cxx/Debug/6t712u51/prefab/x86_64/prefab/lib/x86_64-linux-android/cmake/react-native-vision-camera/react-native-vision-cameraConfig.cmake",
+    "/home/yuri/eyetracking-mobile/node_modules/vision-camera-face-landmarker/android/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/home/yuri/Android/Sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/home/yuri/eyetracking-mobile/node_modules/vision-camera-face-landmarker/android/.cxx/Debug/6t712u51/x86_64",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/home/yuri/Android/Sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/home/yuri/eyetracking-mobile/node_modules/vision-camera-face-landmarker/android/.cxx/Debug/6t712u51/x86_64",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "FaceLandmarker::@6890427a1f51a3e7e1df": {
+      "artifactName": "FaceLandmarker",
+      "abi": "x86_64",
+      "output": "/home/yuri/eyetracking-mobile/node_modules/vision-camera-face-landmarker/android/build/intermediates/cxx/Debug/6t712u51/obj/x86_64/libFaceLandmarker.so",
+      "runtimeFiles": [
+        "/home/yuri/.gradle/caches/9.3.1/transforms/dd29849c799951ad0680f4b910344724/transformed/fbjni-0.7.0/prefab/modules/fbjni/libs/android.x86_64/libfbjni.so",
+        "/home/yuri/.gradle/caches/9.3.1/transforms/63665759bc44fa5b83dd6b6c18b77145/transformed/react-android-0.86.3-debug/prefab/modules/jsi/libs/android.x86_64/libjsi.so",
+        "/home/yuri/eyetracking-mobile/node_modules/react-native-nitro-modules/android/build/intermediates/cxx/Debug/1w2w2w66/obj/x86_64/libNitroModules.so",
+        "/home/yuri/.gradle/caches/9.3.1/transforms/63665759bc44fa5b83dd6b6c18b77145/transformed/react-android-0.86.3-debug/prefab/modules/reactnative/libs/android.x86_64/libreactnative.so",
+        "/home/yuri/eyetracking-mobile/node_modules/react-native-vision-camera/android/build/intermediates/cxx/Debug/475e2l5j/obj/x86_64/libVisionCamera.so"
+      ]
+    }
+  }
+}

@@ -94,6 +94,13 @@ repositories {
 dependencies {
   implementation "com.facebook.react:react-native:+"
   implementation project(":react-native-nitro-modules")
+  // For HybridFrameSpec/NativeFrame (com.margelo.nitro.camera.*), used in
+  // HybridFaceLandmarkerPlugin.kt to unwrap the VisionCamera Frame.
+  implementation project(":react-native-vision-camera")
+  // react-native-vision-camera depends on camera-core as `implementation`
+  // (not `api`), so ImageProxy isn't visible transitively -- confirmed
+  // on-device ("Cannot access class 'ImageProxy'"). Match its version.
+  implementation "androidx.camera:camera-core:1.7.0-alpha03"
 
   // MediaPipe FaceLandmarker (iris-refined face mesh). Version pinned to
   // the latest confirmed available at implementation time -- check

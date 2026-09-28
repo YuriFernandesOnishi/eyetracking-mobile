@@ -24,6 +24,7 @@ export default function SessionScreen() {
   const pointsRef = useRef<GazePoint[]>([]);
   const smootherRef = useRef(createEmaSmoother(TUNING.emaAlpha));
   const finishedRef = useRef(false);
+  const debugDotUpdateCounterRef = useRef(0);
 
   const [debugDot, setDebugDot] = useState<{ x: number; y: number } | null>(null);
   const [secondsLeft, setSecondsLeft] = useState(sessionDurationSec);
@@ -61,7 +62,15 @@ export default function SessionScreen() {
       const smoothed = smootherRef.current(screenPoint);
       if (!smoothed) return;
 
-      if (DEBUG_SHOW_GAZE_DOT) setDebugDot(smoothed);
+      if (DEBUG_SHOW_GAZE_DOT) {
+        // Throttle the React state update driving the debug dot -- pushing a
+        // Fabric commit on every processed frame (~15Hz) crashed natively
+        // inside MountingCoordinator::pullTransaction on a low-end/ARM32
+        // device (Galaxy J7 Prime 2, Android 9). Gaze-point accumulation
+        // above is unaffected and still runs at full rate.
+        debugDotUpdateCounterRef.current += 1;
+        if (debugDotUpdateCounterRef.current % 4 === 0) setDebugDot(smoothed);
+      }
 
       const imagePoint = mapScreenPointToImageSpace(smoothed, rectRef.current);
       if (imagePoint) {

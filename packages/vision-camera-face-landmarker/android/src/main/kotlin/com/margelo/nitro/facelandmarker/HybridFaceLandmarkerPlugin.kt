@@ -1,21 +1,19 @@
 package com.margelo.nitro.facelandmarker
 
+import com.margelo.nitro.NitroModules
 import com.margelo.nitro.camera.HybridFrameSpec
-import com.margelo.nitro.camera.NativeFrame
-import com.margelo.nitro.core.NitroModules
+import com.margelo.nitro.camera.public.NativeFrame
 
 /**
  * Nitro HybridObject implementation backing FaceLandmarkerPlugin.nitro.ts.
  * Bridges a VisionCamera Frame to GazeLandmarkerCore, which holds all the
  * actual MediaPipe logic and knows nothing about VisionCamera types.
  *
- * NOTE: `NativeFrame` / `HybridFrameSpec` package path and the
- * `.image.image` / `.orientation` property names below are based on the
- * react-native-vision-camera v5 "Native Frame Processor Plugins" guide
- * (which documents casting HybridFrameSpec -> NativeFrame to reach the
- * underlying ImageProxy) -- verify these exact property names compile
- * against the installed react-native-vision-camera version, since this
- * could not be checked against a real Android build in this environment.
+ * Confirmed on-device (Galaxy J7 Prime 2 / Android 9): `NativeFrame` lives
+ * at `com.margelo.nitro.camera.public.NativeFrame` (not directly under
+ * `com.margelo.nitro.camera`), and `NitroModules` at `com.margelo.nitro`
+ * (not `com.margelo.nitro.core`) -- both differ from what the
+ * react-native-vision-camera v5 docs implied.
  */
 class HybridFaceLandmarkerPlugin : HybridFaceLandmarkerPluginSpec() {
   private val core: GazeLandmarkerCore by lazy {

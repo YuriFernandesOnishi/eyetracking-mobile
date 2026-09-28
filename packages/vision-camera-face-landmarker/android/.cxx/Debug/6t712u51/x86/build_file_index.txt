@@ -1,0 +1,7 @@
+/home/yuri/eyetracking-mobile/node_modules/vision-camera-face-landmarker/android/.cxx/Debug/6t712u51/prefab/x86/prefab/lib/i686-linux-android/cmake/ReactAndroid/ReactAndroidConfig.cmake
+/home/yuri/eyetracking-mobile/node_modules/vision-camera-face-landmarker/android/.cxx/Debug/6t712u51/prefab/x86/prefab/lib/i686-linux-android/cmake/ReactAndroid/ReactAndroidConfigVersion.cmake
+/home/yuri/eyetracking-mobile/node_modules/vision-camera-face-landmarker/android/.cxx/Debug/6t712u51/prefab/x86/prefab/lib/i686-linux-android/cmake/fbjni/fbjniConfig.cmake
+/home/yuri/eyetracking-mobile/node_modules/vision-camera-face-landmarker/android/.cxx/Debug/6t712u51/prefab/x86/prefab/lib/i686-linux-android/cmake/fbjni/fbjniConfigVersion.cmake
+/home/yuri/eyetracking-mobile/node_modules/vision-camera-face-landmarker/android/.cxx/Debug/6t712u51/prefab/x86/prefab/lib/i686-linux-android/cmake/react-native-nitro-modules/react-native-nitro-modulesConfig.cmake
+/home/yuri/eyetracking-mobile/node_modules/vision-camera-face-landmarker/android/.cxx/Debug/6t712u51/prefab/x86/prefab/lib/i686-linux-android/cmake/react-native-vision-camera/react-native-vision-cameraConfig.cmake
+/home/yuri/eyetracking-mobile/node_modules/vision-camera-face-landmarker/android/CMakeLists.txt

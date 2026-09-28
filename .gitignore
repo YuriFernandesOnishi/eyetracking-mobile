@@ -42,3 +42,6 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+packages/vision-camera-face-landmarker/android/build/
+android/build/
+android/app/build/

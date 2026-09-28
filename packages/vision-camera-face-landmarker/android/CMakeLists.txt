@@ -17,8 +17,15 @@ include_directories(
 
 find_library(LOG_LIB log)
 
+# Our .nitro.ts spec imports VisionCamera's `Frame` type, so nitrogen's
+# generated C++ expects `<VisionCamera/HybridFrameSpec.hpp>` -- exposed by
+# react-native-vision-camera's own prefab module (confirmed on-device:
+# "file not found" without this).
+find_package(react-native-vision-camera REQUIRED)
+
 target_link_libraries(
         ${PACKAGE_NAME}
         ${LOG_LIB}
         android
+        react-native-vision-camera::VisionCamera
 )
